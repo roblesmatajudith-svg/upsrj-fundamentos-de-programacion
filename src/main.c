@@ -1,45 +1,37 @@
 #include <stdio.h>
-
-int main(void)
+int is_even(int numero)
 {
+return numero  %2==0;
 
-    float base = 0.0;
-    float altura = 0.0;
-    float area = 0.0;
+}
 
-    printf("Ingresa la base del cuadrado:\n");
-    scanf("%f", &base);
+void verificar_numero(int numero)
+{
+   
 
-    printf("Ingresa la altura del cuadrado:\n");
-    scanf("%f", &altura);
+ if (numero == 0) {
+        printf("El numero es par\n");
 
-    area = base * altura;
-
-    printf("El resultado del área del cuadrado es: %.2f\n\n", area);
-
-    printf("Calculadora de volumen de un cubo\n");
-    printf("===============================\n\n");
-
-    float lado = 0.0;
-    float volumen = 0.0;
-
-    printf("Ingresa la longitud del lado del cubo: ");
-    if (scanf("%f", &lado) != 1) {
-        printf("Error: Debes ingresar un número válido.\n");
-        return 1;
     }
-
-    if (lado <= 0) {
-        printf("Error: El lado debe ser un valor positivo.\n");
-        return 1;
+    else if (is_even(numero)) {
+        printf("El numero es par\n");
     }
+    else {
+        printf("El numero es impar\n");
+    }
+}
 
-    volumen = lado * lado * lado;
+int main()
+{
+    while (1) {
+        int numero;
 
-    printf("\nRESULTADOS:\n");
-    printf("-----------\n");
-    printf("Lado del cubo: %.2f unidades\n", lado);
-    printf("Volumen del cubo: %.2f unidades cúbicas\n", volumen);
+        printf("Ingresa un numero:\n");
+        scanf("%i", &numero);
+
+        verificar_numero(numero);
+        break;
+    }
 
     return 0; 
 }
